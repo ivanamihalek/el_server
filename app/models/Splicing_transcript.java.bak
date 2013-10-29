@@ -1,0 +1,15 @@
+package models;
+
+import java.util.*;
+
+import javax.persistence.*;
+
+import play.db.jpa.*;
+
+@Entity
+@Table(name="splicing_transcript")
+public class Splicing_transcript extends Model {
+    public String transcript_id;
+    public String exon_id;
+    public int is_covered; 
+}

@@ -1,0 +1,38 @@
+<table class="tabthead" id="splicethead">
+<tr>
+<th>Transcript ID</th>
+<th>CCDS Number</th>
+<th>Exon IDs</th>
+</tr>
+</table>
+<div class="tabtbodydiv">
+<table class="tabtbody" id="splicetbody">
+#{list items:splicings, as:'spl'}
+#{list items:spl.exon_ids, as:'eid'}
+<tr>
+#{if eid_isFirst}
+<td rowspan=${spl.exon_ids.size()}>
+#{if spl.transcript_id[3..5] == 'MUS'}
+<a href='http://www.ensembl.org/Mus_musculus/Transcript/Sequence_cDNA?t=${spl.transcript_id}'
+#{/if}
+#{else}
+<a href='http://www.ensembl.org/Homo_sapiens/Transcript/Sequence_cDNA?t=${spl.transcript_id}'
+#{/else}
+title='Full cDNA sequence in ENSEMBL'>${spl.transcript_id}</a>
+</td>
+<td rowspan=${spl.exon_ids.size()}>
+<a href='http://www.ncbi.nlm.nih.gov/CCDS/CcdsBrowse.cgi?REQUEST=CCDS&DATA=${spl.hit_name}'
+title='Description of this CCDS entry at NCBI'>${spl.hit_name}</a>
+</td>
+#{/if}
+<td>${eid}</td>
+</tr>
+#{/list}
+#{/list}
+</table>
+</div>
+<script>$('#splicetbody a').tooltip();</script>
+#{synccols from_id:'splicetbody', to_id:'splicethead' /}
+<br><hr><br>
+#{jalview pep:jv_p /}
+<p>Z represents exon boundaries. Lowercase nucleotides represent flanking regions of exons.</p>

@@ -1,0 +1,6 @@
+<script type="text/javascript">
+$(window).resize(function(){
+  $("#${_from_id} tr:first-child td:not(:last-child)").each(function(i,e){
+    $("#${_to_id} tr:first-child th").eq(i).width($(e).width());});});
+$(window).resize();
+</script>

@@ -1,0 +1,132 @@
+#{extends 'main.html' /}
+#{set title:'Exolocator - Help' /}
+
+<div class="container">
+   <br><br>
+       <!----------------------->
+          <table  border="0" cellpadding="4" cellspacing="0" width="90%" align="left" >
+
+            <tr> <td align="left" >
+		<a id="Z"><b>What's with 'Z's that appear in the alignment?</b></a>
+		<br>
+		They denote exon boundaries.
+           </td></tr>
+
+	    <tr><td>&nbsp;</td></tr>
+
+           <tr> <td align="left" >
+
+	       <a id="dwld"><b>Downloading alignments and viewing them locally</b></a>
+	       <br>
+	       The links above the alignment visualization window can be used to download the alignments, 
+	       either peptide or nucleotide, and use them locally. 
+           </td></tr>
+
+	    <tr><td>&nbsp;</td></tr>
+
+	   <tr> <td align="left">
+		 
+		   &nbsp; &#9679; &nbsp; Left mouse click to open the alignment as a text file in the browser.
+		   Right mouse click to 'Save as.' (A special note for Safari users: when you  are right clicking/saving, 
+		   make sure to choose "Page Source" from the format menu, rather than "Web Archive.") 
+		   <br>
+		   &nbsp; &#9679; &nbsp;  To view and manipulate an alignment you can use e.g. 
+		   <a href="http://pbil.univ-lyon1.fr/software/seaview.html">Seaview</a>, 
+		   a lightweight and user-friendly application. For other alignment viewers, 
+		   <a href="http://en.wikipedia.org/wiki/List_of_alignment_visualization_software">Wikipedia</a>
+		   provides a good starting point.
+           </td></tr>
+
+	    <tr><td>&nbsp;</td></tr>
+
+
+          <tr> <td align="left" >
+
+	       <a id="dwld"><b>However,  before you plunge into installing your own sequence editor ...</b></a> 
+	       <br>
+	       <a href="http://www.jalview.org/examples/applets.html">Jalview</a>, 
+	       used by ExoLocator to display the alignments, is a  capable and versatile sequence editor
+	       you can use to manipulate the alignment right there in the browser. Note the drop-down menus you can choose from.
+	       Check out <a href="http://www.jalview.org/about/documentation">Jalview's documentation page</a>.
+           </td></tr>
+
+   
+	    <tr><td>&nbsp;</td></tr>
+
+
+          <tr> <td align="left" >
+
+	       <a id="JalviewTrouble"><b>"But JalView is not working in my browser!"</b></a> 
+	       <br>
+	       Yes Jalview, and Java applets in general can be a headache. First try <a href="http://www.jalview.org/examples/linkedapplets_ng.html">here</a>, 
+	       for a nice illustration of how JalView <i>should</i> be working from the authors themselves. If it works fine (in the same browser, and on the same computer),
+	       while the Jalview apple in ExoLocator does not, <a href="mailto:eopsfmail@gmail.com">send us a note</a>. 
+
+	  
+          </td></tr>
+          <tr> <td align="left" >
+	      If the JalView demo does not work, 
+	      most likely Java on your computer needs to be updated. 
+		  <br>&nbsp; &#9679; &nbsp;The downlad page for Java can be found 
+		  <a href="http://www.java.com/en/download/manual.jsp">here</a>..
+		  <br>&nbsp; &#9679; &nbsp;Download the package for  your operating  system.
+		 <br>&nbsp; &#9679; &nbsp;Unpack (the actual procedure depends on the platform -  if everything else fails, follow the instructions)
+		   and restart the browser.
+		 <br>&nbsp; &#9679; &nbsp;Verify Java installation  <a href="http://java.com/en/download/installed.jsp?detect=jre">here</a>.
+
+		 <br>&nbsp; &#9679; &nbsp;Again, <a href="http://www.jalview.org/examples/linkedapplets_ng.html">check the demo</a>. 
+		 You may have to "accept the risk" of running the applets.
+
+		 <br>&nbsp; &#9679; &nbsp;Return to <a href="http://exolocator.eopsf.org">ExoLocator</a>.
+	    
+          </td></tr>
+
+
+         <tr> <td align="left" >
+	       <br> 
+	       If it still does not work, for MacOSX in particular, 
+	       here is what can be gleaned on the Internet (from <a href="ttps://discussions.apple.com/thread/4901834">this source</a>): 
+	       <br>&nbsp; &#9679; &nbsp;  Under either OSX 10.8.3 or 10.7.5, Java 7-17 runs under Firefox 19.02.
+	       <br>&nbsp; &#9679; &nbsp; Under either OSX 10.8.3 or 10.7.5, Java 7-17 does not run under Safari 6.0.3.
+	       <br>&nbsp; &#9679; &nbsp; Under either OSX 10.8.3 or 10.7.5, Java 7-17 does not run under Chrome 25.x (Chrome is 32 bit, Java is 64 bit only).
+	      
+              <br>
+	       If you are in posession of one of the unlucky combinations above, try Firefox.
+
+
+           </td></tr>
+
+   
+	    <tr><td>&nbsp;</td></tr>
+
+       <tr> <td align="left" >
+	   <a id="cube"><b>Using alignments as input for conservation and specialization scoring</b></a>
+	   <br>
+	   &nbsp;&nbsp; The alignments produced by Exolocator can be used to score residue conservation within a group of 
+	   orthologous sequences, or specialization between two groups of paralogues. From Exolocator itself, 
+	   it can be done by clicking on the conservation/specialization links, 
+	   which forward the alignment to <a href="http://eopsf.org/cube/cube.html">Cube server</a>.
+
+	   <br>
+	   &nbsp;&nbsp; The purpose of such  exercise is, typically, to help in the rational design of single-site mutational experiments, 
+	   to estimate the impact of SNPs, or guide computational docking. Specialization analysis, in particular,  
+	   may help in the search of separation-of-function mutants.
+
+	   <br>
+	   &nbsp;&nbsp; Follow <a href="http://eopsf.org/cube/help/on_comparative_analysis.html">this link</a> 
+	   to read more about why-and-how of protein sequence comparison.
+          </td></tr>
+
+  
+   
+	    <tr><td>&nbsp;</td></tr>
+
+         <tr> <td align="left" >
+		<a id="Z"><b>" ... actually, I am not really sure what these ortho- and para-thingies are ..."</b></a>
+		<br>
+	        Check out  <a href="http://eopsf.org/cube/db/html/homologues.html">the mini-presentation here</a>.
+           </td></tr>
+
+</table>
+
+</div>

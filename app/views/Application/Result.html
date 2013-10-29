@@ -1,0 +1,29 @@
+#{extends 'main.html' /}
+#{set title:'Exolocator - ' + ensembl_id /}
+#{set 'moreStyles'}
+<link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/themes/smoothness/jquery-ui.min.css">
+#{/set}
+#{set 'moreScripts'}
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
+<script>
+function switchTabToHash(){idx=$(window.location.hash).index(); if (idx<0) {idx=0;}
+$("#tabs").tabs({active:idx});}
+window.onhashchange=switchTabToHash;
+$(function(){$("#tabs").tabs({create:switchTabToHash,
+activate:function(event,ui){window.location.hash=ui.newTab[0].id;}});});
+</script>
+#{/set}
+<div class="gene_info">
+<br>
+<font size="6">Exons found for ${ensembl_id}</font></br></br>
+<font size="4">${species}</font></br>
+<font size="4">${description}</font></br>
+</div>
+<div id="tabs" style="overflow:hidden">
+<ul>
+<li id="Exons"><a href="@{tabExons(ensembl_id)}">Exons</a></li>
+<li id="Orthologs"><a href="@{tabOrthologs(ensembl_id)}">Orthologs</a></li>
+<li id="Paralogs"><a href="@{tabParalogs(ensembl_id)}">Paralogs</a></li>
+<li id="Splicings"><a href="@{tabSplicings(ensembl_id)}">Alternative Splicings</a></li>
+</ul>
+</div>

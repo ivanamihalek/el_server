@@ -1,0 +1,49 @@
+#{extends 'main.html' /}
+#{set title:'Exolocator - Help' /}
+
+<div class="container">
+
+<p>
+<a id="Z"><b>What's with 'Z's that appear in the alignment?</b></a>
+<br>
+They denote exon boundaries.
+</p>
+
+
+<p>
+<a id="dwld"><b>Downloading alignments and viewing them locally</b></a>
+<br>
+The links above the alignment visualization window can be used to download the alignments, 
+either peptide or nucleotide, and use them locally. 
+<ul>
+     <li>
+     Left mouse click to open the alignment as a text file in the browser.
+     Right mouse click to 'Save as.'
+     </li>
+ 
+     <li>
+     To view and manipulate an alignment you can use e.g. 
+     <a href="http://pbil.univ-lyon1.fr/software/seaview.html">Seaview</a>, 
+     a lightweight and user-friendly application. For other alignment viewers, 
+     <a href="http://en.wikipedia.org/wiki/List_of_alignment_visualization_software">Wikipedia</a>
+     provides a good starting point.
+     </li>
+</ul>
+
+<br>
+
+<p>
+<a id="cube"><b>Using alignmenst as input for conservation and specialization scoring.</b></a>
+<br>
+ The alignments produced by Exolocator can be used to score residue conservation within a group of orthologous sequences, or specialization between two groups of paralogues. From Exolocator itself, it can be done by clicking on the conservation/specialization links, which forward the alignment to <a href="http://eopsf.org/cube/cube.html">Cube server</a>.
+
+<br>
+The purpose of such an exercise is, typically, to help in the rational design of single-site mutational experiments, to estimate the impact of SNPs, or guide computational docking. Specialization analysis, in particular,  may help in the search of separation-of-function mutants.
+
+<br>
+Follow <a href="http://eopsf.org/cube/help/on_comparative_analysis.html">this link</a> to read more about why-and-how of protein sequence comparison.
+
+</p>
+
+
+</div>

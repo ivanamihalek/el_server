@@ -1,0 +1,60 @@
+#{extends 'main.html' /}
+#{set title:'Exolocator - Home' /}
+<div class="main">
+<p><h2>What is Exolocator?</h2></p>
+<p><b>ExoLocator</b> is a collection  of protein coding <a href="http://en.wikipedia.org/wiki/Exon">exons</a> 
+from vertebrate genomes. It contains exons annotated by the <a href="http://www.ensembl.org">
+ENSEMBL</a> pipeline, and by our own extended search. We look for 
+ ostensibly missing exons by similarity to known exon 
+sequences from taxonomically close species.</p>
+
+<p> In our search we rely on <a href="http://www.drive5.com/usearch/"> USEARCH</a>, an established CPU
+based tool, as well as
+<a href="https://github.com/mkorpar/swSharp"><b>SW#</b></a> (pronounced "SW sharp" and 
+<a href="https://github.com/mkorpar/swSharp">available on Github</a>), a program that 
+implements hardware accelerated Smith-Waterman algorithm. It enables us to do dynamic 
+programming search on genomic sequences of lengths that are typically tractable only by 
+heuristic methods.</p>
+
+<p>Collected sets of exons can be used, within the ExoLocator server, 
+to estimate the conservation of residues wihtin orthologus groups, 
+as well as their specialization across paralogous families of proteins.
+
+<p><b>A note about sequence visualization in ExoLocator:</b> ExoLocator uses 
+<a href="http://www.jalview.org/examples/applets.html">JalView</a>, a Java 
+based browser plug-in for sequence alignment visualization. 
+Without one of the newer versions of Java, the applet will not run, 
+irrespective of the browser.<a href="http://exolocator.eopsf.org/help"> Read more.</a>
+
+<p><b>A note about alternative splicing information in ExoLocator:</b> 
+ExoLocator  currently makes no attempt at predciting alternative splicing events. Rather, in the cases when it is available 
+(for human and mouse genomes),  
+it takes over the information from <a href="http://www.ncbi.nlm.nih.gov/CCDS/CcdsBrowse.cgi">CCDS project</a>.
+
+
+</div>
+
+<!-------------------------------------------------------->
+
+<div class="sidebar">
+<p><h2>Search for exons</h2></p>
+<p>Enter  name or ENSEMBL identifier of a protein coding gene from any vertebrate species for a tabulated 
+view of its exon content. </p>
+<div class="searcharea">
+     #{form @Search(), method:'GET'}
+     <p>Gene Ensembl ID or name: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+     <input type="text" name="query" id="search_area" value="#{get 'search_text' /}">
+     <input type="button" onclick="document.getElementById('search_area').value=''" value="Clear">
+     <input type="submit" value="Search"></p>
+     #{/form}
+     #{form @Sequence(), method:'GET'}
+     <p>Peptide sequence:<br>
+     <textarea name="protein_seq" id="sequence_area" cols=60 rows=5>#{get 'sequence_text' /}</textarea><br>
+     <input type="button" onclick="document.getElementById('sequence_area').value=''" value="Clear">
+     <input type="submit" value="Search"></p>
+#{/form}
+</div>
+<hr>
+#{doLayout /}
+</div>
+

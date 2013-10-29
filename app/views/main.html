@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+
+<head>
+<title>#{get 'title' /}</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="icon" type="image/png" href="/public/images/favicon.ico">
+#{get 'moreStyles' /}
+#{stylesheet 'style.css' /}
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" ></script>
+#{get 'moreScripts' /}
+</head>
+
+<body>
+<div class="container">
+
+<div class="mainmenu">
+<ul>
+<li>#{a @index()}HOME#{/a}</li>
+<li>#{a @help()}HELP#{/a}</li>
+<li><a href="http://epsf.bmad.bii.a-star.edu.sg/">ABOUT</a></li>
+<li>#{a @contactPage()}CONTACT#{/a}</li>
+</ul>
+</div>
+
+<div class="logo">
+#{a @index()}
+<img src="/public/images/exolocator_banner.png" width="830" style="float:left">
+#{/a}
+</div>
+
+#{doLayout /}
+
+<div class="footer">
+By <a href="http://epsf.bmad.bii.a-star.edu.sg/">EPSF</a>, 
+a part of <a href="http://www.bii.a-star.edu.sg/research/bmad/bmad.php"> 
+          Biomolecular Modeling and Design Division</a>, 
+<a href="http://www.bii.a-star.edu.sg">BII</a>, <a href="http://www.a-star.edu.sg">A*STAR</a>. Design by Harpy.
+</div>
+
+</div>
+</body>
+
+</html>

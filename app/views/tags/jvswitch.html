@@ -1,0 +1,27 @@
+<p style="float:right">
+<a id="dlalign${_id}" href="${_pep}">download the alignment</a> /
+<a id="switch${_id}" href="javascript:switchjv${_id}()">switch to nucleotide view</a>
+</p>
+<div id="jv${_id}" style="width:100%">
+#{jalview pep:_pep /}
+</div>
+<script type="text/javascript">
+$('#dlalign${_id}').tooltip({ items: "*", content: "<a href='/help#dwld'>more on downloading the alignments</a>", hide: {delay:1000, effect:'none'}, show: {effect:'none'} });
+function switchjv${_id}() {
+      j=document.getElementById("jv${_id}");
+      d=document.getElementById("dlalign${_id}");
+      s=document.getElementById("switch${_id}");
+      h=j.innerHTML;
+      if (h.indexOf("${_pep}") != -1) {
+           j.innerHTML=h.replace("${_pep}","${_nuc}");
+           d.setAttribute("href","${_nuc}");
+           d.innerHTML="download the alignment";
+           s.innerHTML="switch to peptide view";
+      } else {
+           j.innerHTML=h.replace("${_nuc}","${_pep}");
+           d.setAttribute("href","${_pep}");
+           d.innerHTML="download the alignment";
+           s.innerHTML="switch to nucleotide view";
+      }
+}
+</script>

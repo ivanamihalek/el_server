@@ -1,0 +1,33 @@
+<table class="tabthead" id="exonthead">
+<tr>
+<th>Exon ID</th>
+<th>Start in gene</th>
+<th>End in gene</th>
+<th>Source</th>
+<th>Nucleotide Sequence</th>
+<th>Peptide Sequence</th>
+</tr>
+</table>
+<div class="tabtbodydiv">
+<table class="tabtbody" id="exontbody">
+#{list items:exons}
+<tr>
+#{if _.is_known == 1}
+<td>${_.ensembl_exon_id}</td>
+#{/if}
+#{else}
+<td>${_.source}_${_.start_in_gene}</td>
+#{/else}
+<td>${_.start_in_gene}</td>
+<td>${_.end_in_gene}</td>
+<td>${_.source}</td>
+<td>#{a @download_exon(_.exon_key,"N")}Download FASTA#{/a}</td>
+#{if _.is_coding == 1}<td>#{a @download_exon(_.exon_key,"A")}Download FASTA#{/a}</td>#{/if}
+#{else}<td>Non-coding</td>#{/else}
+</tr>
+#{/list}
+</table>
+</div>
+#{synccols from_id:'exontbody', to_id:'exonthead' /}
+<br><hr><br>
+#{jvswitch pep:jv_p, nuc:jv_n, id:1 /}

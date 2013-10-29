@@ -1,0 +1,13 @@
+#{extends 'frontpage.html' /}
+#{if hits.isEmpty()}
+<p>No Ensembl IDs match your query!</p>
+#{/if}
+#{else}
+#{set 'search_text'}${hits.iterator().next().ensembl_gene_id}#{/set}
+<p>The following Ensembl IDs match your query:</p>
+<p>
+#{list items:hits, as:'hit'}
+<p>#{a @Result(hit.ensembl_gene_id)}${hit.ensembl_gene_id}#{/a} - ${hit.getDesc()}</p>
+#{/list}
+</p>
+#{/else}
