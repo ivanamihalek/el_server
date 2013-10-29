@@ -77,7 +77,10 @@ public class Application extends Controller {
     }
 
     public static void Sequence(String protein_seq) {
+	
         String ens_id = "", Final = "";
+	Set<Description> hits = new HashSet<Description>();
+	
 	if (protein_seq == null || !InDatabaseRange(protein_seq)) {
             Final = "Protein sequence is too long or short.";
         } else if (!fasta.matcher(protein_seq).matches()) {
@@ -90,11 +93,13 @@ public class Application extends Controller {
                 Final = "The best match is " + ens_id + " with " + result[2] +
                         "% identity over the aligned length of " + result[3] +
                         " positions. ";
-            } else {
+		List<Description> descs = Description.find("ensembl_gene_id", ens_id).fetch(1);
+		hits.addAll(descs);
+           } else {
                 Final = "BLAST lookup failed.";
             }
         }
-        render(ens_id, protein_seq, Final);
+	render(ens_id, protein_seq, Final, hits);
     }
 
     public static void Search(

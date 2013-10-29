@@ -1,4 +1,11 @@
 #{extends 'frontpage.html' /}
 #{set 'search_text'}${ens_id}#{/set}
 #{set 'sequence_text'}${protein_seq}#{/set}
+
 <p>${Final}</p>
+
+<p>
+#{list items:hits, as:'hit'}
+<p>#{a @Result(hit.ensembl_gene_id)}${hit.ensembl_gene_id}#{/a} - ${hit.getDesc()}</p>
+#{/list}
+</p>
