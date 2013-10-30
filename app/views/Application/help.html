@@ -60,12 +60,52 @@
 	       <br>
 	       Yes Jalview, and Java applets in general can be a headache. First try <a href="http://www.jalview.org/examples/linkedapplets_ng.html">here</a>, 
 	       for a nice illustration of how JalView <i>should</i> be working from the authors themselves. If it works fine (in the same browser, and on the same computer),
-	       while the Jalview apple in ExoLocator does not, <a href="mailto:eopsfmail@gmail.com">send us a note</a>. 
-
+	       while the Jalview apple in ExoLocator does not, <a href="mailto:eopsfmail@gmail.com">send us a note</a>.
+	    <br> 
+             If the JalView demo does not work,  most likely Java on your computer needs to be updated. See the hints at the bottom of this page.
 	  
           </td></tr>
+	  
+	    <tr><td>&nbsp;</td></tr>
+
+
+
+       <tr> <td align="left" >
+	   <a id="cube"><b>Using alignments as input for conservation and specialization scoring</b></a>
+	   <br>
+	   &nbsp;&nbsp; The alignments produced by Exolocator can be used to score residue conservation within a group of 
+	   orthologous sequences, or specialization between two groups of paralogues. From Exolocator itself, 
+	   it can be done by clicking on the conservation/specialization links, 
+	   which forward the alignment to <a href="http://eopsf.org/cube/cube.html">Cube server</a>.
+
+	   <br>
+	   &nbsp;&nbsp; The purpose of such  exercise is, typically, to help in the rational design of single-site mutational experiments, 
+	   to estimate the impact of SNPs, or guide computational docking. Specialization analysis, in particular,  
+	   may help in the search of separation-of-function mutants.
+
+	   <br>
+	   &nbsp;&nbsp; Follow <a href="http://eopsf.org/cube/help/on_comparative_analysis.html">this link</a> 
+	   to read more about why-and-how of protein sequence comparison.
+          </td></tr>
+
+   
+	    <tr><td>&nbsp;</td></tr>
+
+         <tr> <td align="left" >
+		<a id="Z"><b>" ... actually, I am not really sure what these ortho- and para-thingies are ..."</b></a>
+		<br>
+	        Check out  <a href="http://eopsf.org/cube/db/html/homologues.html">the mini-presentation here</a>.
+           </td></tr>
+
+   
+	    <tr><td>&nbsp;</td></tr>
+
+            <tr><td> <hr></td></tr>
+	    <tr><td>&nbsp;</td></tr>
+
+	  
           <tr> <td align="left" >
-	      If the JalView demo does not work,  most likely Java on your computer needs to be updated. 
+	      <b>Java updating hints.</b>  If the JalView demo does not work,  most likely Java on your computer needs to be updated. Here are some hints.
 		  <br>&nbsp; &#9679; &nbsp;The download page for Java can be found 
 		  <a href="http://www.java.com/en/download/manual.jsp">here</a>..
 		  <br>&nbsp; &#9679; &nbsp;Download the package for  your operating  system.
@@ -92,40 +132,53 @@
               <br>
 	       If you are in posession of one of the unlucky combinations above, try Firefox.
 
+	   <br>
+	   and here are some notes from our own practice:
+	   <pre>
+
+ Java JRE and plugin installation:
+
+Ubuntu Linux
+----------------
+1. Run Terminal
+2. sudo add-apt-repository ppa:webupd8team/java
+3. sudo apt-get update
+4. sudo apt-get install oracle-java7-installer
+5. In configuration window click OK,
+   then accept Oracle Binary Code license terms by clicking Yes
+6. Download will start (accept action by entering Y(es)). Wait for Installer to finish.
+7. Open web page. Security Warning will pop up.
+   Check "I accept the risk and want to run this app." and click Run
+
+Windows 
+----------------
+1. To install browser plugin open http://java.com/en/download/
+2. Click on "Free Java Download" and then "Agree and Start Free Download"
+3. In downloads folder double-click on:
+   - chromeinstall-7u45.exe - for Google Chrome
+   - jre-7u45-windows-x64 - for Internet Explorer 64-bit
+   - jre-7u45-windows-i586 - for Internet Explorer 32-bit
+   If UAC (User Account Control) window pops up click Yes to allow Installer to make changes to computer
+4. In Java Setup window click Install (choose "Close Programs and Continue" if any browser windows are open)
+5. This will also enable plugin for other browsers (like Mozilla Firefox or Internet Explorer*)
+6. Restart of Web browser might be needed in order for plugin to become operational.
+7. If security bar in browser asks for permission to run Java,
+   you can click either "Run this time" or "Always run on this site"
+8. Open web page. Security Warning will pop up.
+   Check "I accept the risk and want to run this app." and click Run
+
+9. If Jalview Applet loads for a very long time, try reloading current page
+
+
+* On 64-bit Windows 64-bit version of Internet Explorer must be enabled:
+1. In Control panel open Internet Options
+2. On Security tab check "Enable Protected Mode"
+3. On Advanced tab scroll the list and find and check "Enable Enhanced Protected Mode"
+4. Close Internet Properties Window and restart computer          </pre>
 
            </td></tr>
-
-   
-	    <tr><td>&nbsp;</td></tr>
-
-       <tr> <td align="left" >
-	   <a id="cube"><b>Using alignments as input for conservation and specialization scoring</b></a>
-	   <br>
-	   &nbsp;&nbsp; The alignments produced by Exolocator can be used to score residue conservation within a group of 
-	   orthologous sequences, or specialization between two groups of paralogues. From Exolocator itself, 
-	   it can be done by clicking on the conservation/specialization links, 
-	   which forward the alignment to <a href="http://eopsf.org/cube/cube.html">Cube server</a>.
-
-	   <br>
-	   &nbsp;&nbsp; The purpose of such  exercise is, typically, to help in the rational design of single-site mutational experiments, 
-	   to estimate the impact of SNPs, or guide computational docking. Specialization analysis, in particular,  
-	   may help in the search of separation-of-function mutants.
-
-	   <br>
-	   &nbsp;&nbsp; Follow <a href="http://eopsf.org/cube/help/on_comparative_analysis.html">this link</a> 
-	   to read more about why-and-how of protein sequence comparison.
-          </td></tr>
 
   
-   
-	    <tr><td>&nbsp;</td></tr>
-
-         <tr> <td align="left" >
-		<a id="Z"><b>" ... actually, I am not really sure what these ortho- and para-thingies are ..."</b></a>
-		<br>
-	        Check out  <a href="http://eopsf.org/cube/db/html/homologues.html">the mini-presentation here</a>.
-           </td></tr>
-
 </table>
 
 </div>
