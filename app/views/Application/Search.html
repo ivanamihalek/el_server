@@ -1,13 +1,34 @@
 #{extends 'frontpage.html' /}
-#{if hits.isEmpty()}
+#{if hits_res.isEmpty() && hits_desc.isEmpty()}
 <p>No Ensembl IDs match your query!</p>
 #{/if}
+
 #{else}
-#{set 'search_text'}${hits.iterator().next().ensembl_gene_id}#{/set}
-<p>The following Ensembl IDs match your query:</p>
-<p>
-#{list items:hits, as:'hit'}
-<p>#{a @Result(hit.ensembl_gene_id)}${hit.ensembl_gene_id}#{/a} - ${hit.getDesc()}</p>
-#{/list}
-</p>
+   <p>The following Ensembl IDs match your query:</p>
+   <p>
+
+   #{if ! hits_res.isEmpty()}
+   #{set 'search_text'}${hits_res.iterator().next().stable_id}#{/set}
+   #{/if}
+   #{else}
+       #{if ! hits_desc.isEmpty()}
+       #{set 'search_text'}${hits_desc.iterator().next().ensembl_gene_id}#{/set}
+       #{/if}
+   #{/else}
+
+   #{if ! hits_res.isEmpty()}
+      #{list items:hits_res, as:'hit'}
+     <p>#{a @Result(hit.stable_id)}${hit.stable_id}#{/a} - ${hit.synonym}</p>
+     #{/list}
+     </p>
+  #{/if}
+
+  #{if ! hits_desc.isEmpty()}
+  #{list items:hits_desc, as:'hit'}
+  <p>#{a @Result(hit.ensembl_gene_id)}${hit.ensembl_gene_id}#{/a} - ${hit.getDesc()}</p>
+  #{/list}
+  </p>
+  #{/if}
+
+
 #{/else}
