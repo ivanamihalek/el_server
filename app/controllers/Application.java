@@ -112,9 +112,9 @@ public class Application extends Controller {
         } catch (IllegalArgumentException e) {
 	    // Not a valid ensembl id, so resolve it as a description or synonym
             List<Description> syn_descs;
-            syn_descs = Resolution.find("stable_id", " where synonym like ?", "%"+query+"%").fetch();
+            //syn_descs = Resolution.find("stable_id", " where synonym like ?", "%"+query+"%").fetch();
             List<Description> descs = 
-                Description.find("escr_txt like ? and ensembl_gene_id like 'ENSG0%'","%"+query+"%").fetch();
+                Description.find("descr_txt like ? and ensembl_gene_id like 'ENSG0%'","%"+query+"%").fetch();
             Set<Description> hits = new HashSet<Description>();
             //hits.addAll(syn_descs);
 	    hits.addAll(descs);
