@@ -1,0 +1,69 @@
+body { font:small Verdana,Arial,sans-serif; background:white; }
+
+h1, h2, h3, h4, h5, h6, p { margin-top:0; padding:0 15px; } 
+/* removing the top margin gets around an issue where margins can escape from their containing div. The remaining bottom margin will hold it away from any elements that follow. adding the padding to the sides of the elements within the divs, instead of the divs themselves, gets rid of any box model math. A nested div with side padding can also be used as an alternate method. */
+
+/* keep anchor tag styles in this order! */
+a img { border: none; } /* no blue border around image links */
+a:link { color: #002277; text-decoration:underline; }
+a:visited { color: #4E5869; text-decoration:underline; }
+a:hover, a:active, a:focus { text-decoration:none; } /* for keyboard navigation */
+
+/* centered container for page with percentage based width */
+.container { width:80%; max-width:1260px; min-width:780px; margin:0 auto; background:inherit}
+
+.mainmenu { float:right; width:160px; background:inherit; }
+.mainmenu ul { list-style:none; }
+.mainmenu li a {
+  text-decoration:none;
+  font-size:medium;
+  background:left no-repeat url(/public/images/arrow.gif);
+  padding:0 0 0 30px;
+  line-height:150%;
+}
+.logo {
+  background:repeat-x url(/public/images/banner_mid.jpg);
+  padding-right:160px;
+  height:120px;
+}
+
+.footer {
+  position:relative;
+  top:30px;
+  border-top:thin solid black;
+  clear:both;
+  font-size:120%;
+  text-align:center;
+}
+
+.main {
+  position:relative;
+  top:20px;
+  float:left;
+  width:30%;
+}
+
+.sidebar {
+  position:relative;
+  top:20px;
+  float:left;
+  width:70%;
+}
+
+.gene_info { bottom:30px; color:navy }
+
+table { width:100%; border-collapse:collapse; text-align:center }
+.tabthead tr { height:40px; background:silver }
+.tabtbodydiv { height:360px; overflow:auto }
+.tabtbody tr { height:30px }
+/* #tabtbody td { border:thin solid silver } */
+
+.help_container { float:left; width:90%; }
+
+.box h1,h2,h3,h4,h5 {font:36px Georgia, Arial, "Times New Roman", Times; color:#002277; text-align:right;margin:0px}
+.box h4,h5 {font:24px Georgia, Arial, "Times New Roman", Times; color:#002277; text-align:right;margin:0px}
+.box h6 {font:14px Arial, Tahoma, Georgia, "Times New Roman", Times; color:#929292; text-align:right;margin:0px}
+.box p {font:14px Arial, Tahoma, Georgia, "Times New Roman", Times; color:#929292; text-align:justify; padding:6px 50px;}
+/* ~~ This grouped selector gives the lists in the .content area space ~~ */
+.box ul, .content ol { padding: 0 15px 15px 40px; }
+

@@ -10,7 +10,7 @@ logs
 modules
 play
 precompiled
-public
+#public
 server.pid
 tmp
 

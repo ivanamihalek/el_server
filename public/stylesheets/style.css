@@ -1,0 +1,117 @@
+body, html {
+  
+	background:#eaeaea;
+  	margin: 0;
+  	padding: 0;
+	font-family:  Arial, Helvetica, sans-serif;
+	font-size: medium;
+	line-height:120%;
+
+	color:#575757;
+}
+
+ul, ol, dl { 
+	padding: 0;
+	margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+
+	/* removing the top margin gets around an issue where margins can escape from their containing div. 
+ 	The remaining bottom margin will hold it away from any elements that follow. */
+	margin-top:    0;
+	padding-right: 15px;
+
+	/* adding the padding to the sides of the elements within the divs, instead of the divs themselves, 
+	gets rid of any box model math. A nested div with side padding can also be used as an alternate method. */
+	padding-left: 15px;
+}
+
+
+.box  {font:14px Arial, Tahoma, Georgia, "Times New Roman", Times; text-align:justify;margin:0px}
+
+
+a img { border: none; } /* remove blue border around image link */
+
+/* ~~ Styling for your site's links must remain in this order - including the group of selectors that create the hover effect. ~~ */
+a:link    { color: #002277; text-decoration: underline; }
+/* a:visited { color: #4E5869; text-decoration: underline; } */
+a:visited { color: #002277; text-decoration: underline; }
+a:hover, a:active, a:focus { text-decoration: none; } /* for keyboard navigation */
+
+.container {
+  width: 1000px;
+  /*  width:80%;
+  max-width:1260px;
+  min-width:780px; */
+  margin:0 auto;
+  background:inherit;
+}
+
+.mainmenu { float:right; height:120px; width:160px; background:inherit; padding-top:10px;}
+.mainmenu ul { list-style:none; }
+.mainmenu li a {
+  text-decoration:none;
+  font-size:medium;
+  background:left no-repeat url(/public/images/arrow.gif);
+  padding:0 0 0 30px;
+  line-height:150%;
+}
+
+.logo {
+  padding-right:160px;
+  height:115px;
+}
+
+.footer {
+  position:relative;
+  top:30px;
+  border-top:thin solid black;
+  clear:both;
+  font-size:80%;
+  text-align:center;
+}
+
+.main {
+	position:relative;
+	top:20px;
+	float:left;
+ 	width:40%;
+	overflow:auto;
+ 	text-align: justify;
+	text-justify: auto;
+}
+
+.sidebar {
+  position:relative;
+  top:20px;
+  float:left;
+  width:58%;
+  text-align:left;
+  margin-left:20px;
+}
+
+.searcharea {
+  text-align:center;
+}
+
+
+.help_container { float:left; width:90%; }
+.help_container ul { margin-left:30px }
+.gene_info { margin-bottom:30px; color:#002277 }
+
+table { width:100%; border-collapse:collapse; text-align:center }
+.tabthead tr { height:40px; background:silver; }
+.tabtbodydiv { height:200px; overflow:auto; }
+.tabtbody tr { height:30px; }
+.tabtbody td { border:1px solid silver; font:14px Arial, Tahoma, Georgia, "Times New Roman"; color:#002277; }
+/* .tabtbody td { border:thin solid silver } */
+
+.orthos { font:14px Arial, Tahoma, Georgia, "Times New Roman"; color:#002277;}
+
+.box h1,h2,h3,h4,h5 {font:36px Georgia, Arial, "Times New Roman", Times; color:#002277; text-align:right;margin:0px}
+.box h4,h5 {font:24px Georgia, Arial, "Times New Roman", Times; color:#002277; text-align:right;margin:0px}
+.box h6 {font:14px Arial, Tahoma, Georgia, "Times New Roman", Times; color:#929292; text-align:right;margin:0px}
+.box p {font:14px Arial, Tahoma, Georgia, "Times New Roman", Times; color:#929292; text-align:justify; padding:6px 50px;}
+/* ~~ This grouped selector gives the lists in the .content area space ~~ */
+.box ul, .content ol { padding: 0 15px 15px 40px; }
