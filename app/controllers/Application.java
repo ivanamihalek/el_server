@@ -104,7 +104,8 @@ public class Application extends Controller {
 
     public static void Search(
 	@Required(message = "Ensembl gene id is required") String query) {
-	query.replaceAll("\\s+","");
+	//query.replaceAll("\\s+","");
+	query.toUpperCase();
 	// Search by ensembl ID, description or synonym
         try {
             GeneQuery q = new GeneQuery(query);
