@@ -1,0 +1,12 @@
+<div class="orthos" style="color: #002277">
+#{list items:orthologs, as:'or'}
+#{a @Result(or.cognate_gene_id)}${or.species} (${or.common_name})#{/a} ${or_isLast ? '' : '/'}
+#{/list}
+</div>
+<br><hr><br>
+<p style="float:left">
+<a href="${jv_notes}">download notes</a> /
+#{a @SpecsRedirect(jv_p)}visualize conservation#{/a}
+</p>
+#{jvswitch pep:jv_p, nuc:jv_n, id:2 /}
+<p>Z represents exon boundaries. Lowercase nucleotides represent flanking regions of exons.</p>

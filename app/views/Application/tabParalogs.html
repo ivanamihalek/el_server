@@ -1,0 +1,32 @@
+#{form @Specialization(), method:'GET', id:'spec_form'}
+<table class="tabthead" id="paralogthead">
+<tr>
+<th>Ensembl id</th>
+<th>Description</th>
+<th>Vis?</th>
+</tr>
+</table>
+<div class="tabtbodydiv">
+<table class="tabtbody" id="paralogtbody">
+#{list items:desc_map.keySet(), as:'id'}
+<tr>
+<td>#{a @Result(id)}${id}#{/a}</td>
+<td style="text-align:left">${desc_map[id]}</td>
+<td>&nbsp;<input type="checkbox" name="afa_names" value="${id}">&nbsp;</td>
+</tr>
+#{/list}
+</table>
+</div>
+#{synccols from_id:'paralogtbody', to_id:'paralogthead' /}
+<br><hr><br>
+<p style="float:left">
+<a href="javascript:submitSpec()">visualise specialization</a>
+</p>
+<script>
+function warnTwo() {alert("Exactly two paralogs must be selected for specialization visualisation");}
+function submitSpec() {if ($(':checked').length==2) document.forms['spec_form'].submit(); else warnTwo();}
+$('input:checkbox').change(function(){if ($(':checked').length>2) warnTwo();});
+</script>
+#{/form}
+#{jvswitch pep:jv_p, nuc:jv_n, id:3/}
+<p>Z represents exon boundaries. Lowercase nucleotides represent flanking regions of exons.</p>
