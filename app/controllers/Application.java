@@ -104,7 +104,6 @@ public class Application extends Controller {
 
     public static void Search(
 	@Required(message = "Ensembl gene id is required") String query) {
-	//query.replaceAll("\\s+","");
 	query = query.replaceAll("\\s+","").toUpperCase();
 	// Search by ensembl ID, description or synonym
         try {
@@ -112,15 +111,23 @@ public class Application extends Controller {
 	    Result(q.getId()); // Valid ensembl ID, so give the result page
         } catch (IllegalArgumentException e) {
 	    // Not a valid ensembl id, so resolve it as a description or synonym
-	    List<Description> descs = 
+	    List<Description> hits_desc = 
 	    Description.find("descr_txt like ? and ensembl_gene_id like 'ENSG0%'","%"+query+"%").fetch();	    
-	    Set<Description> hits_desc = new HashSet<Description>();
-	    hits_desc.addAll(descs);
 	    
             List<Resolution> synonyms;
 	    synonyms =  Resolution.find("synonym like ?", "%"+query+"%").fetch();
-	    Set<Resolution> hits_res = new HashSet<Resolution>();
-	    hits_res.addAll(synonyms);
+	    List <Resolution> hits_res = new ArrayList<Resolution>();
+
+	    for (Resolution res: synonyms) {
+		if (res.synonym.equals(query) ) {
+		    hits_res.add(res);
+		    break;
+		}
+	    }
+	    for (Resolution res: synonyms) {
+		if (res.synonym.equals(query) )  continue;
+		hits_res.add(res);
+	    }
 	    
 	    render(hits_desc, hits_res); // Give the matching IDs for the user to choose, if any
 	}
