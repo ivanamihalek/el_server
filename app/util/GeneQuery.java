@@ -17,6 +17,7 @@ public class GeneQuery {
 	tempMap.put("AME", "ailuropoda_melanoleuca");
 	tempMap.put("APL", "anas_platyrhynchos");
 	tempMap.put("ACA", "anolis_carolinensis");
+	tempMap.put("AMX", "astyanax_mexicanus");
 	tempMap.put("BTA", "bos_taurus");
 	tempMap.put("CJA", "callithrix_jacchus");
 	tempMap.put("CAF", "canis_familiaris");
@@ -36,6 +37,7 @@ public class GeneQuery {
 	tempMap.put("GGO", "gorilla_gorilla");
 	tempMap.put("STO", "ictidomys_tridecemlineatus");
 	tempMap.put("LAC", "latimeria_chalumnae");
+	tempMap.put("LOC", "lepisosteus_oculatus");
 	tempMap.put("LAF", "loxodonta_africana");
 	tempMap.put("MMU", "macaca_mulatta");
 	tempMap.put("MEU", "macropus_eugenii");
@@ -51,6 +53,7 @@ public class GeneQuery {
 	tempMap.put("OAN", "ornithorhynchus_anatinus");
 	tempMap.put("OCU", "oryctolagus_cuniculus");
 	tempMap.put("ORL", "oryzias_latipes");
+	tempMap.put("OAR", "ovis_aries");
 	tempMap.put("OGA", "otolemur_garnettii");
 	tempMap.put("PTR", "pan_troglodytes");
 	tempMap.put("PSI", "pelodiscus_sinensis");
