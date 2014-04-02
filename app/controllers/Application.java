@@ -252,10 +252,11 @@ public class Application extends Controller {
 	File temp_afa = File.createTempFile("specs_",".afa");
 
 	// Write temp_afa file with all Z replaced with - in sequences using sed
-        runAndSaveStdout(new String[]{"/bin/sed", "/^>/!s/Z/-/g", afa.getPath()}, temp_afa);
+	// no need for this any more - cube is equipped to handle it
+        //runAndSaveStdout(new String[]{"/bin/sed", "/^>/!s/Z/-/g", afa.getPath()}, temp_afa);
 
-	// Convert temp_afa file to msf using afa2msf.pl script
-	runAndSaveStdout(new String[]{"lib/afa2msf.pl", temp_afa.getPath()}, temp_msf);
+	// Convert temp_afa file to msf using afa2msf.pl script - why are we doing this?
+	runAndSaveStdout(new String[]{"lib/afa2msf.pl", afa.getPath()}, temp_msf);
 
 	// Request page from SPECS
 	resultpage =  WS.url(Play.configuration.getProperty("specs_url"))
