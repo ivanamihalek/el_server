@@ -256,6 +256,7 @@ public class Application extends Controller {
         //runAndSaveStdout(new String[]{"/bin/sed", "/^>/!s/Z/-/g", afa.getPath()}, temp_afa);
 
 	// Convert temp_afa file to msf using afa2msf.pl script - why are we doing this?
+	// to make the server understand that htese are already aligned
 	runAndSaveStdout(new String[]{"lib/afa2msf.pl", afa.getPath()}, temp_msf);
 
 	// Request page from SPECS
