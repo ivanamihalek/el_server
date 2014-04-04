@@ -249,11 +249,6 @@ public class Application extends Controller {
 	WS.HttpResponse resultpage;
         File afa = new File(Play.applicationPath + afa_name);
 	File temp_msf = File.createTempFile("specs_",".msf");
-	File temp_afa = File.createTempFile("specs_",".afa");
-
-	// Write temp_afa file with all Z replaced with - in sequences using sed
-	// no need for this any more - cube is equipped to handle it
-        //runAndSaveStdout(new String[]{"/bin/sed", "/^>/!s/Z/-/g", afa.getPath()}, temp_afa);
 
 	// Convert temp_afa file to msf using afa2msf.pl script - why are we doing this?
 	// to make the server understand that htese are already aligned
@@ -264,7 +259,6 @@ public class Application extends Controller {
 			.files(new WS.FileParam(temp_msf, "fnm"))
 			.post();
 
-	temp_afa.delete();
 	temp_msf.delete();
 
 	// Find job page URL on SPECS result and redirect there
