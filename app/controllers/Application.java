@@ -248,7 +248,7 @@ public class Application extends Controller {
     public static void SpecsRedirect(String afa_name) throws IOException {
 	WS.HttpResponse resultpage;
         File afa = new File(Play.applicationPath + afa_name);
-	File temp_msf = File.createTempFile("test123_",".msf");
+	File temp_msf = File.createTempFile("specs_",".msf");
 
 	// Convert temp_afa file to msf using afa2msf.pl script - why are we doing this?
 	// to make the server understand that htese are already aligned
