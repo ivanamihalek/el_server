@@ -56,6 +56,8 @@ public class GeneQuery {
 	tempMap.put("OAR", "ovis_aries");
 	tempMap.put("OGA", "otolemur_garnettii");
 	tempMap.put("PTR", "pan_troglodytes");
+	tempMap.put("PAN", "papio_anubis");
+	tempMap.put("PFO", "poecilia_formosa");
 	tempMap.put("PSI", "pelodiscus_sinensis");
 	tempMap.put("PMA", "petromyzon_marinus");
 	tempMap.put("PPY", "pongo_abelii");

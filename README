@@ -5,11 +5,10 @@ Starting ExoLocator:
 * mysql must be running (sudo mysqld_safe)
 * sudo ./play start
 
-
-
 ----------------------------------------------------------------
 Things which need to be changed when adding new species:
 
 * The file app/util/GeneQuery.java needs to be modified.
 * A file Exon_[spec_name].java has to be created in app/models, 
-  templated on the exiting files of other species.
+  templated on the existing files for other species.
+
