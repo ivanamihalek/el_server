@@ -87,7 +87,7 @@ public class Application extends Controller {
             Final = "Protein sequence should be in fasta format.";
         } else {
             String result[] = blastall(protein_seq,
-                Play.configuration.getProperty("all_species")).split("\t");
+				       Play.configuration.getProperty("all_species")).split("\t");
             if (result.length > 3) {
                 ens_id = result[1];
                 Final = "The best match is " + ens_id + " with " + result[2] +

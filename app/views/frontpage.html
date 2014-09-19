@@ -54,12 +54,14 @@ view of its exon content. </p>
      <input type="button" onclick="document.getElementById('search_area').value=''" value="Clear">
      <input type="submit" value="Search"></p>
      #{/form}
+     <!----
      #{form @Sequence(), method:'GET'}
      <p>Peptide sequence:<br>
      <textarea name="protein_seq" id="sequence_area" cols=60 rows=5>#{get 'sequence_text' /}</textarea><br>
      <input type="button" onclick="document.getElementById('sequence_area').value=''" value="Clear">
      <input type="submit" value="Search"></p>
-#{/form}
+     #{/form}
+     --->
 </div>
 <hr>
 #{doLayout /}
