@@ -86,30 +86,33 @@ def  make_seq_name (cursor, ensembl_db_name, species, exon_id, exon_known, exon_
 
     sequence_name = ""
 
-    if not exon_seqs:
-        # get the raw (unaligned) sequence for the exon that maps onto human
-        exon_seqs = get_exon_seqs(cursor, map.exon_id_2, map.exon_known_2, ensembl_db_name[map.species_2])
-        if exon_seqs and  len(exon_seqs)>=7:
-            [exon_seq_id, pepseq, pepseq_transl_start, pepseq_transl_end, 
-             left_flank, right_flank, dna_seq] = exon_seqs
 
     if exon_known == 1:
         exon_stable_id = exon2stable (cursor, exon_id, ensembl_db_name[species])
         if exon_stable_id:
             sequence_name = exon_stable_id + "_" + species
-        else:
-            sequence_name = str(exon_id) + "_" + species
-    print exon_id, exon_known, sequence_name
+    
     if not sequence_name: 
         gene_id = exon_id2gene_id (cursor, ensembl_db_name[species],  exon_id, exon_known)
         if gene_id:
             gene_stable_id = gene2stable (cursor, gene_id, ensembl_db_name[species])
             if gene_stable_id:
                 sequence_name = gene_stable_id  + "_" + species
-                if not pepseq_transl_start is None and not  pepseq_transl_end is None:
-                    sequence_name += "_" +  pepseq_transl_start+ "_" + pepseq_transl_end
-                else:
-                    sequence_name += "_unknown_region"
+                if not exon_seqs:
+                    # get the raw (unaligned) sequence for the exon that maps onto human
+                    exon_seqs = get_exon_seqs(cursor, map.exon_id_2, map.exon_known_2, ensembl_db_name[map.species_2])
+                    if  not exon_seqs or   len(exon_seqs)!=7:
+                        sequence_name += "_unknown_region"
+                    else:
+                        [exon_seq_id, pepseq, pepseq_transl_start, pepseq_transl_end, 
+                         left_flank, right_flank, dna_seq] = exon_seqs
+
+                        if not pepseq_transl_start is None and not  pepseq_transl_end is None:
+                            sequence_name += "_" +  pepseq_transl_start+ "_" + pepseq_transl_end
+                        else:
+                            sequence_name += "_unknown_region"
+        else:
+           sequence_name = exon_id  + "_" + species 
 
     return sequence_name
 
