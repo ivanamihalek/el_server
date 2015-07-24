@@ -99,6 +99,7 @@ def  make_seq_name (cursor, ensembl_db_name, species, exon_id, exon_known, exon_
             sequence_name = exon_stable_id + "_" + species
         else:
             sequence_name = str(exon_id) + "_" + species
+    print exon_id, exon_known, sequence_name
     if not sequence_name: 
         gene_id = exon_id2gene_id (cursor, ensembl_db_name[species],  exon_id, exon_known)
         if gene_id:
