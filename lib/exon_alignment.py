@@ -108,7 +108,7 @@ def  make_seq_name (cursor, ensembl_db_name, species, exon_id, exon_known, exon_
                      left_flank, right_flank, dna_seq] = exon_seqs
 
                     if not pepseq_transl_start is None and not  pepseq_transl_end is None:
-                        sequence_name += "_" +  pepseq_transl_start+ "_" + pepseq_transl_end
+                        sequence_name += "_" +  str(pepseq_transl_start) + "_" + str(pepseq_transl_end)
                     else:
                         sequence_name += "_unknown_region"
         else:
