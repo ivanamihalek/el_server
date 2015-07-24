@@ -53,6 +53,7 @@ pdbchains
 sys_tfm
 *.aln
 *to_*.pdb
+nbproject
 
 # OS generated files #
 ######################
